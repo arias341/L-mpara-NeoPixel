@@ -1,0 +1,58 @@
+#include "FastLED.h"
+
+//Definimos número de leds
+#define NUM_LEDS 24
+
+//Definimos la salida
+#define DATA_PIN 3
+
+CRGB leds[NUM_LEDS];
+CRGBPalette16 currentPalette;
+TBlendType    currentBlending;
+
+extern CRGBPalette16 myRedWhiteBluePalette;
+
+void setup() {
+  //Le decimos a la librería que NeoPixel vamos a usar
+FastLED.addLeds<WS2812, DATA_PIN, RGB>(leds, NUM_LEDS);
+}
+
+void loop() {
+  //Color blanco
+  for(int b = 0;b<NUM_LEDS;b++){
+    leds[b] = CRGB(255,255,255); 
+    } 
+     FastLED.show();
+    delay(2000);
+    
+   //Color verde
+    for(int v = 0;v<NUM_LEDS;v++){
+    leds[v] = CRGB(255,000,000); 
+    } 
+     FastLED.show();
+    delay(2000);
+
+       //Color amarillo
+    for(int a = 0;a<NUM_LEDS;a++){
+    leds[a] = CRGB(255,255,0); 
+    } 
+     FastLED.show();
+    delay(2000);
+
+       //Color azul
+    for(int a = 0;a<NUM_LEDS;a++){
+    leds[a] = CRGB(0,0,255); 
+    } 
+     FastLED.show();
+    delay(2000);
+
+       //Color vermello
+    for(int r = 0;r<NUM_LEDS;r++){
+    leds[r] = CRGB(0,255,0); 
+    } 
+     FastLED.show();
+    delay(2000);
+}
+
+
+
